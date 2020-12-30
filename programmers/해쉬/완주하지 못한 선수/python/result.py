@@ -104,8 +104,8 @@ def solution(participant, completion):
 
 
 if __name__ == "__main__":
-    print(test6(["leo", "kiki", "eden"],["eden", "kiki"])) # 결과: leo
-    print(test6(["marina", "josipa", "nikola", "vinko", "filipa"],["josipa", "filipa", "marina", "nikola"])) # 결과: vinko
-    print(test6(["mislav", "stanko", "mislav", "ana"],["stanko", "ana", "mislav"])) # 결과: mislav
+    print(solution(["leo", "kiki", "eden"],["eden", "kiki"])) # 결과: leo
+    print(solution(["marina", "josipa", "nikola", "vinko", "filipa"],["josipa", "filipa", "marina", "nikola"])) # 결과: vinko
+    print(solution(["mislav", "stanko", "mislav", "ana"],["stanko", "ana", "mislav"])) # 결과: mislav
 
     print("time :", time.time() - start)
