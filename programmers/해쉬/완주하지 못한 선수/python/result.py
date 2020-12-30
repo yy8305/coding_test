@@ -47,6 +47,8 @@ def test3(participant, completion):
 
 def test4(participant, completion):
     """
+        zip 함수 사용 
+
         정확성: 50.0
         효율성: 50.0
         합계: 100.0 / 100.0
@@ -62,6 +64,24 @@ def test4(participant, completion):
             return p
 
     return participant[-1]
+
+def test5(participant, completion):
+    """
+        해쉬 함수 사용 
+
+        정확성: 50.0
+        효율성: 50.0
+        합계: 100.0 / 100.0
+    """
+    dic = {}
+    temp = 0
+    for p in participant:
+        dic[hash(p)] = p
+        temp += hash(p)
+    for c in completion:
+        temp -= hash(c)
+
+    return dic[temp]
 
 #정답
 def solution(participant, completion):
@@ -84,8 +104,8 @@ def solution(participant, completion):
 
 
 if __name__ == "__main__":
-    print(solution(["leo", "kiki", "eden"],["eden", "kiki"])) # 결과: leo
-    print(solution(["marina", "josipa", "nikola", "vinko", "filipa"],["josipa", "filipa", "marina", "nikola"])) # 결과: vinko
-    print(solution(["mislav", "stanko", "mislav", "ana"],["stanko", "ana", "mislav"])) # 결과: mislav
+    print(test6(["leo", "kiki", "eden"],["eden", "kiki"])) # 결과: leo
+    print(test6(["marina", "josipa", "nikola", "vinko", "filipa"],["josipa", "filipa", "marina", "nikola"])) # 결과: vinko
+    print(test6(["mislav", "stanko", "mislav", "ana"],["stanko", "ana", "mislav"])) # 결과: mislav
 
     print("time :", time.time() - start)
