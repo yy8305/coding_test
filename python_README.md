@@ -4,15 +4,35 @@ python 코딩테스트 정리
 ## 자료형
 
 - 리스트(list)
+
     - 중복 제거되지 않음
+    
+    - 항목 제거하기
+        
+        ```python
+        a = ['aa','bb']
+        a.remove('aa')
+        print(a) # ['bb']
+        ```
+      
+    - 리스트 합치기
+    
+        ```python
+        a = ['aa','bb']
+        b = ['aa','cc']
+        a + b
+        ```
 
 - 튜플 (tuple)
+
     - 중복 제거되지 않음
 
 - 사전 (dict)
+
     - 중복 제거됨
 
 - 집합 (set)
+
     - 중복 제거됨
 
 ## 유용한 함수
@@ -76,4 +96,32 @@ python 코딩테스트 정리
     sorted([3, 2, 1])   # [1, 2, 3]
 
     sorted([3, 2, 1], reverse=True)  # [3, 2, 1] , 반대로 정렬
+    ```
+  
+  
+- sorted : 정렬 함수 
+
+    ```python
+    # key를 줘서 조건으로 정렬 가능
+    sorted([(1,2,3),(1,2,3),(1,2,3)], key=(lambda x: (-x[0], -x[1], x[2])), reverse=True)
+    ```
+  
+
+- enumerate : list for문에서 index, value 분리? 가능
+
+    ```python
+    a = [('pop',1),('pop',2),('pop',3)]
+
+    for i,idx in enumerate(a):
+        print('========')
+        print(i)
+        print(idx)
+
+    # 결과
+    ##  ========
+    ##  0
+    ##  ('pop', 1)
+    ##  ========
+    ##  1
+    ##  ('pop', 3)
     ```

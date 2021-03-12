@@ -2,6 +2,39 @@ import time
 
 start = time.time()
 
+#정답
+def solution(participant, completion):
+    """
+        참여한 선수(array) = participant (participant >= 1, participant <= 100000)
+        완주한 선수(array) = completion ( len(completion) == len(participant) -1 )
+        etc) 동명이인 있음, 참가자의 이름은 1개 이상 20개 이하의 알파벳 소문자
+        return = 완주하지 못한 선수
+        return: string
+    """
+
+    participant.sort()
+    completion.sort()
+
+    for p,c in zip(participant,completion):
+        if p != c:
+            return p
+
+    return participant[-1]
+
+#참고
+def solution2(participant, completion):
+    """
+        참여한 선수(array) = participant (participant >= 1, participant <= 100000)
+        완주한 선수(array) = completion ( len(completion) == len(participant) -1 )
+        etc) 동명이인 있음, 참가자의 이름은 1개 이상 20개 이하의 알파벳 소문자
+        return = 완주하지 못한 선수
+        return: string
+    """
+
+    answer = set(participant) - set(completion)
+
+    return ((answer == set()) and next(p for p,c in zip(participant,completion) if p != c) or answer.pop())
+
 def test1(participant, completion):
     """
         정확성: 50.0
@@ -82,26 +115,6 @@ def test5(participant, completion):
         temp -= hash(c)
 
     return dic[temp]
-
-#정답
-def solution(participant, completion):
-    """
-        참여한 선수(array) = participant (participant >= 1, participant <= 100000)
-        완주한 선수(array) = completion ( len(completion) == len(participant) -1 )
-        etc) 동명이인 있음, 참가자의 이름은 1개 이상 20개 이하의 알파벳 소문자
-        return = 완주하지 못한 선수
-        return: string
-    """
-
-    participant.sort()
-    completion.sort()
-
-    for p,c in zip(participant,completion):
-        if p != c:
-            return p
-
-    return participant[-1]
-
 
 if __name__ == "__main__":
     print(solution(["leo", "kiki", "eden"],["eden", "kiki"])) # 결과: leo
