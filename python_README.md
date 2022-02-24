@@ -134,3 +134,54 @@ python 코딩테스트 정리
     # 결과
     1
     ```
+
+- max : list 중에 큰값 찾기
+    ```python
+    a = [1,2,3]
+    print(max(a))
+
+    # 결과
+    3
+    ```
+
+- sum : list 전체 합산 값
+    ```python
+    a = [1,2,3]
+    print(sum(a))
+
+    # 결과
+    6
+    ```
+
+- join : list에 있는 문자들 합하기
+    ```python
+    a = ['a','b','c']
+    print(''.join(a))
+
+    # 결과
+    abc
+    ```
+
+- ord : 문자 -> 숫자 로 변경 (아스키코드로 변경)
+    ```python
+    print(ord('a'))
+
+    # 결과
+    97
+    ```
+
+- chr : 숫자 -> 문자 로 변경 (아스키코드에서 문자로 변경)
+    ```python
+    print(chr(97))
+
+    # 결과
+    a
+    ```
+
+- isalpha : 문자가 알파벳인지 검사
+    ```python
+    print('a'.isalpha())
+
+    # 결과
+    True
+    ```
